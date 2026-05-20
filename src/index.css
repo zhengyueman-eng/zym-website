@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-hd-bg: #FFFDF9;
+  --color-hd-card: #FFFAF3;
+  --color-hd-heading: #4A3F35;
+  --color-hd-text: #5C4C42;
+  --color-hd-body: #65584D;
+  --color-hd-muted: #8A7363;
+  --color-hd-border: #8A7363;
+  --color-hd-border-light: #E8DCD0;
+  --color-hd-border-warm: #D4A373;
+  --color-hd-nav-bg: #3A3028;
+  --color-hd-blue: #487CE2;
+  --color-hd-blue-dark: #3868C8;
+  --color-hd-blue-light: #EBF2FF;
+  --color-hd-blue-lighter: #F4F8FF;
+  --color-hd-orange: #F4A261;
+  --color-hd-orange-dark: #E89050;
+  --color-hd-orange-light: #FFF5EE;
+  --color-hd-orange-lighter: #FFFAF5;
+  --color-hd-purple: #9B5DE5;
+  --color-hd-purple-dark: #8850CC;
+  --color-hd-purple-light: #F3EEFF;
+  --color-hd-teal: #50B0A0;
+  --color-hd-teal-dark: #40A090;
+  --color-hd-teal-light: #E0F5F0;
+  --color-hd-teal-lighter: #F0FAFA;
+  --color-hd-rose: #FF99C8;
+  --color-hd-rose-light: #FFF0F5;
+  --color-hd-violet: #9B5DE5;
+  --color-hd-violet-light: #F3EEFF;
+  --color-hd-amber: #E9C46A;
+  --color-hd-amber-light: #FFF8E0;
+  --color-hd-yellow: #E9C46A;
+  --color-hd-pink: #FF99C8;
+  --color-hd-cyan: #60C0D0;
+  --color-hd-warm: #D4A373;
+  --color-hd-nav-active: #FBE2C5;
+}
