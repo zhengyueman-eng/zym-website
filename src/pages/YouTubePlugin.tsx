@@ -6,23 +6,38 @@ import { useNavigate } from 'react-router-dom';
 const features = [
   {
     title: '一键分析视频字幕',
-    description: '在 YouTube 视频页面点击"AI学语言"按钮，自动抓取当前视频字幕。',
+    description: '在 YouTube 视频页面读取字幕内容，减少用户复制、整理和切换工具的成本。',
   },
   {
-    title: '三模块 AI 智能解析',
-    description: '句子翻译：提供准确、通顺的中文翻译。重点单词/词组解析：提取关键词，标注词性、中文释义及用法。语法分析：解析介词用法、动词变位、固定搭配等语法现象。',
+    title: '三模块 AI 智能分析',
+    description: '输出句子翻译、词组解析和语法分析，覆盖看视频学外语时最常见的理解需求。',
   },
   {
-    title: '多模型自由切换',
-    description: '支持智谱 GLM-4.7-Flash（完全免费）、DeepSeek-V3.2（高性价比）两种 AI 模型，用户可在设置中自行选择。',
+    title: '两种模型选择',
+    description: '支持免费模型 GLM-4.7-Flash 和高性价比模型 DeepSeek-V3.2，用户可以按成本与效果切换。',
   },
   {
     title: 'API Key 本地存储',
-    description: '用户输入的密钥通过 chrome.storage.sync 安全保存，支持多模型独立配置。',
+    description: '将用户配置保存在本地，降低重复输入成本，同时让插件保持轻量部署。',
   },
   {
-    title: '缓存机制',
-    description: '相同字幕文本的分析结果自动缓存 1 小时，避免重复调用，节省成本与时间。',
+    title: '字幕缓存机制',
+    description: '相同字幕文件自动缓存，避免重复消耗 token，提升响应速度和使用体验。',
+  },
+];
+
+const notes = [
+  {
+    title: '技术栈',
+    description: 'Chrome Extension、JavaScript、智谱 GLM、DeepSeek API。',
+  },
+  {
+    title: '使用场景',
+    description: '面向通过 YouTube 看访谈、公开课、影视片段和短视频学习外语的用户。',
+  },
+  {
+    title: '产品思路',
+    description: '把外部视频转化成可被 AI 拆解的学习材料，让用户在观看过程中完成理解、记录和复习。',
   },
 ];
 
@@ -62,7 +77,6 @@ const YouTubePlugin = () => {
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
-      {/* 顶部导航 */}
       <motion.header
         className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5"
         initial={{ y: -100 }}
@@ -82,7 +96,6 @@ const YouTubePlugin = () => {
         </div>
       </motion.header>
 
-      {/* Hero 区域 - 深色背景 */}
       <section className="relative bg-[#0a0a12] pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div
@@ -91,22 +104,21 @@ const YouTubePlugin = () => {
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           >
             <p className="text-xs text-white/30 tracking-[0.2em] uppercase mb-6">
-              YouTube Learning Assistant
+              Chrome Extension / YouTube Assistant
             </p>
-            <h1 
+            <h1
               className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight mb-6"
               style={{ fontFamily: "'Playfair Display', 'Noto Serif SC', serif" }}
             >
-              AI学语言 · 视频插件
+              外语学习视频插件
             </h1>
             <p className="text-white/40 max-w-2xl leading-relaxed text-sm lg:text-base font-light">
-              通过 Vibe Coding 构建的浏览器插件。利用大模型与轻量插件架构，将外部视频"教材化"。支持一键获取逐句翻译、重点词汇解析、语法点拆解三大 AI 输出。
+              一款面向 YouTube 外语学习场景的 Chrome 浏览器扩展。它自动提取视频字幕，并结合 AI 大模型完成实时翻译、词汇解析、俚语解释和语法分析。
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* 图片展示区域 */}
       <section className="relative z-10 -mt-10 mx-6 sm:mx-8 lg:mx-12 max-w-6xl lg:mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -117,17 +129,15 @@ const YouTubePlugin = () => {
           <div className="aspect-video w-full flex items-center justify-center">
             <img
               src="/demo-photo.png"
-              alt="AI学语言 · 视频插件功能演示"
+              alt="外语学习视频插件功能演示"
               className="w-full h-full object-contain"
             />
           </div>
         </motion.div>
       </section>
 
-      {/* 内容区域 */}
       <section className="py-20 lg:py-28">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
-          {/* 标签 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -137,23 +147,22 @@ const YouTubePlugin = () => {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs text-black/40 bg-black/[0.03] border border-black/[0.06]">
               <span className="w-1.5 h-1.5 rounded-full bg-black/20"></span>
-              V1.0 拓展Demo 以开发者模式加载
+              Chrome Extension Demo
             </span>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
-            {/* 已实现功能 */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h2 
+              <h2
                 className="text-2xl font-semibold text-[#1a1a2e] mb-10 tracking-tight"
                 style={{ fontFamily: "'Playfair Display', 'Noto Serif SC', serif" }}
               >
-                当前已实现功能
+                核心功能
               </h2>
               <div className="space-y-8">
                 {features.map((feature, index) => (
@@ -166,7 +175,7 @@ const YouTubePlugin = () => {
                     viewport={{ once: true }}
                   >
                     <h3 className="text-base font-semibold text-[#1a1a2e] mb-2 flex items-center gap-3">
-                      <span className="text-black/10 group-hover:text-black/25 transition-colors duration-300">—</span>
+                      <span className="text-black/10 group-hover:text-black/25 transition-colors duration-300">•</span>
                       {feature.title}
                     </h3>
                     <p className="text-black/40 text-sm leading-relaxed pl-6">
@@ -177,37 +186,29 @@ const YouTubePlugin = () => {
               </div>
             </motion.div>
 
-            {/* 未来规划 */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h2 
+              <h2
                 className="text-2xl font-semibold text-[#1a1a2e] mb-10 tracking-tight"
                 style={{ fontFamily: "'Playfair Display', 'Noto Serif SC', serif" }}
               >
-                未来最终版规划
+                项目说明
               </h2>
               <div className="space-y-8">
-                {futurePlans.map((plan, index) => (
-                  <motion.div
-                    key={plan.title}
-                    className="group"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.08 }}
-                    viewport={{ once: true }}
-                  >
+                {notes.map((note) => (
+                  <div key={note.title} className="group">
                     <h3 className="text-base font-semibold text-[#1a1a2e] mb-2 flex items-center gap-3">
-                      <span className="text-black/10 group-hover:text-black/25 transition-colors duration-300">—</span>
-                      {plan.title}
+                      <span className="text-black/10 group-hover:text-black/25 transition-colors duration-300">•</span>
+                      {note.title}
                     </h3>
                     <p className="text-black/40 text-sm leading-relaxed pl-6">
-                      {plan.description}
+                      {note.description}
                     </p>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </motion.div>
@@ -215,11 +216,50 @@ const YouTubePlugin = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      <section className="pb-20 lg:pb-28">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mb-10"
+          >
+            <h2
+              className="text-2xl font-semibold text-[#1a1a2e] tracking-tight"
+              style={{ fontFamily: "'Playfair Display', 'Noto Serif SC', serif" }}
+            >
+              未来规划功能
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {futurePlans.map((plan, index) => (
+              <motion.div
+                key={plan.title}
+                className="border-b border-black/[0.06] pb-8"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: index * 0.06 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-lg font-semibold text-[#1a1a2e] mb-3 flex items-center gap-3">
+                  <span className="text-black/10">—</span>
+                  {plan.title}
+                </h3>
+                <p className="text-black/40 leading-relaxed text-sm pl-6">
+                  {plan.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <footer className="py-16 border-t border-black/[0.04]">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
           <p className="text-black/20 text-xs tracking-[0.15em] uppercase">
-            © 2024 郑月满 · 用 AI 创造无限可能
+            © 2026 郑月满
           </p>
         </div>
       </footer>

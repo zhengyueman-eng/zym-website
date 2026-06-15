@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { User, Code, Briefcase, GraduationCap, Menu, X } from 'lucide-react';
@@ -9,6 +9,7 @@ import ExperienceSection from './sections/ExperienceSection';
 import EducationSection from './sections/EducationSection';
 import ProjectDetail from './pages/ProjectDetail';
 import YouTubePlugin from './pages/YouTubePlugin';
+import GestureMagic from './pages/GestureMagic';
 
 const TABS = [
   { id: 'about', label: '个人简介', icon: User },
@@ -197,13 +198,13 @@ function MainContent() {
                   关于我
                 </h2>
                 <p className="text-sm text-black/40 mb-8">
-                  深圳职业技术大学应用德语专业 · GPA 3.7/4.0 · 专业排名前 5%
+                  深圳职业技术大学应用德语专业 · GPA 3.7/4.0 · 专业排名前 5% · AI Coding 实践者
                 </p>
                 <div className="w-12 h-px bg-black/10 mx-auto mb-8" />
                 <p className="text-lg text-[#4a4a5a] leading-relaxed max-w-2xl mx-auto font-light">
-                  关注 AI 如何创造真实价值，持续探索大模型在教育、效率与内容等真实场景中的应用。
-                  擅长利用 Vibe Coding 快速完成从想法验证到产品 Demo 的实践，
-                  并在项目迭代中不断思考技术、产品与用户需求之间的连接。
+                  我从应用德语和跨文化沟通出发，把语言学习中的真实痛点转化为可以运行的 AI 产品原型。
+                  目前持续用 Vibe Coding、Prompt 设计和模型选型测试，搭建外语学习视频助手、YouTube 学习插件
+                  与手势交互网页等项目，关注 AI 如何真正提升学习效率、内容理解和互动体验。
                 </p>
               </ScrollReveal>
             </div>
@@ -229,7 +230,7 @@ function MainContent() {
         <footer className="py-16 border-t border-black/[0.04]">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
             <p className="text-black/20 text-xs tracking-[0.15em] uppercase">
-              © 2024 郑月满 · 用 AI 创造无限可能
+              © 2026 郑月满 · 用 AI 创造无限可能
             </p>
           </div>
         </footer>
@@ -258,6 +259,7 @@ export default function App() {
     <Routes>
       <Route path="/project/ai-video-learning" element={<ProjectDetail />} />
       <Route path="/project/youtube-plugin" element={<YouTubePlugin />} />
+      <Route path="/project/gesture-magic" element={<GestureMagic />} />
       <Route path="*" element={<MainContent />} />
     </Routes>
   );

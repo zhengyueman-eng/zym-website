@@ -18,7 +18,7 @@ export default function HeroSection({ onScrollDown }: HeroSectionProps) {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
           className="text-xs sm:text-sm text-white/50 tracking-[0.4em] uppercase mb-8 font-medium"
         >
-          AI领域的探索者 · 跨界自学实践者
+          Applied German · AI Coding · Product Demos
         </motion.p>
 
         {/* 主标题 - 打字机效果 + 衬线字体 */}
@@ -46,7 +46,7 @@ export default function HeroSection({ onScrollDown }: HeroSectionProps) {
           transition={{ duration: 0.8, delay: 0.9, ease: [0.4, 0, 0.2, 1] }}
           className="text-lg sm:text-xl text-white/40 max-w-2xl mx-auto mb-12 leading-relaxed font-light"
         >
-          在 AI 与人文的交汇处持续探索
+          用语言学习视角，把 AI 想法做成可以体验的产品原型
         </motion.p>
 
         {/* 装饰线 */}
