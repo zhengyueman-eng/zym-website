@@ -53,7 +53,7 @@ export default function ProjectsSection() {
     <section className="py-16 lg:py-20 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <ScrollReveal className="mb-10">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl mx-auto text-center">
             <motion.p
               className="text-xs text-black/30 tracking-[0.2em] uppercase mb-5"
               initial={{ opacity: 0, x: -20 }}

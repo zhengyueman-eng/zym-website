@@ -29,7 +29,7 @@ export default function EducationSection() {
     <section className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <ScrollReveal className="mb-16">
-          <div className="flex items-center gap-3 mb-10">
+          <div className="flex flex-col items-center text-center gap-4 mb-10">
             <GraduationCap className="w-4 h-4 text-black/20" strokeWidth={1.5} />
             <h2
               className="text-3xl sm:text-4xl font-semibold text-[#1a1a2e] tracking-tight"
@@ -88,7 +88,7 @@ export default function EducationSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <ScrollReveal delay={0.3}>
-            <div className="flex items-center gap-3 mb-10">
+            <div className="flex flex-col items-center text-center gap-4 mb-10">
               <Star className="w-4 h-4 text-black/20" strokeWidth={1.5} />
               <h2
                 className="text-2xl font-semibold text-[#1a1a2e] tracking-tight"
@@ -118,7 +118,7 @@ export default function EducationSection() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.4}>
-            <div className="flex items-center gap-3 mb-10">
+            <div className="flex flex-col items-center text-center gap-4 mb-10">
               <BookOpen className="w-4 h-4 text-black/20" strokeWidth={1.5} />
               <h2
                 className="text-2xl font-semibold text-[#1a1a2e] tracking-tight"
